@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mdlinkcheck"
+version = "0.1.0"
+description = "Report broken relative links and anchors in Markdown files."
+requires-python = ">=3.9"
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+mdlinkcheck = "mdlinkcheck.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["mdlinkcheck*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
